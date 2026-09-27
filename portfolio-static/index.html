@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chirag Kathuria — Portfolio</title>
+<meta name="description" content="Chirag Kathuria — Data Engineer &amp; AI/ML Engineer. Production data pipelines, fraud detection, RAG and agentic LLM systems.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root { --accent: #7C5CFC; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0B0E14; color: #ECEFF6; font-family: 'IBM Plex Sans', sans-serif; }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  ul { margin: 0; padding: 0; }
+  li { list-style: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; }
+
+  .nav-link { color: #99A2B8; font-size: 14px; font-weight: 500; padding: 6px 2px; border-bottom: 2px solid transparent; }
+  .nav-link:hover { color: #ECEFF6; }
+  .btn-primary { background: var(--accent); color: #0B0E14; transition: transform .15s ease, background .15s ease; }
+  .btn-primary:hover { transform: translateY(-1px); filter: brightness(0.92); }
+  .btn-outline { transition: background .15s ease, transform .15s ease; }
+  .btn-outline:hover { background: rgba(124,92,252,0.10); transform: translateY(-1px); }
+  .social-btn { transition: border-color .15s ease, color .15s ease, transform .15s ease; }
+  .social-btn:hover { border-color: var(--accent); color: #ECEFF6; transform: translateY(-2px); }
+  .skill-card { transition: border-color .2s ease, transform .2s ease; }
+  .skill-card:hover { border-color: #333c56; transform: translateY(-2px); }
+  .exp-card { transition: border-color .2s ease, transform .2s ease; }
+  .exp-card:hover { border-color: #333c56; transform: translateY(-2px); }
+  .contact-btn { transition: border-color .15s ease, color .15s ease, transform .15s ease; }
+  .contact-btn:hover { border-color: var(--accent); color: #ECEFF6; transform: translateY(-1px); }
+  .carousel-arrow { transition: border-color .15s ease, background .15s ease; }
+  .carousel-arrow:hover { border-color: var(--accent); background: rgba(124,92,252,0.10); }
+  .carousel-dot { transition: width .25s ease, background .25s ease; }
+  .testimonial-card { transition: border-color .2s ease, transform .2s ease; }
+  .testimonial-card:hover { border-color: #333c56; transform: translateY(-2px); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes floatBlob {
+    0%   { transform: translate(-50%, -50%) scale(1); }
+    50%  { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+  .reveal { opacity: 0; animation: fadeUp .7s ease forwards; }
+  .reveal-1 { animation-delay: .05s; }
+  .reveal-2 { animation-delay: .16s; }
+  .reveal-3 { animation-delay: .27s; }
+  .reveal-4 { animation-delay: .38s; }
+  .reveal-5 { animation-delay: .49s; }
+  .reveal-photo { opacity: 0; animation: fadeIn .9s ease .2s forwards; }
+  .hero-blob { animation: floatBlob 7s ease-in-out infinite; }
+
+  /* Scroll-reveal via IntersectionObserver: elements start hidden, JS adds .in-view */
+  .scroll-reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .scroll-reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  .type-cursor { display: inline-block; width: 2px; height: 0.85em; background: currentColor; margin-left: 3px; vertical-align: -0.1em; animation: blink 0.9s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .float-slow { animation: drift 5s ease-in-out infinite; }
+
+  .accent { color: var(--accent); }
+  .accent-bg { background: var(--accent); }
+
+  @media (max-width: 860px) {
+    .hero-row { flex-direction: column-reverse; }
+    .section-pad { padding-left: 24px !important; padding-right: 24px !important; }
+    .nav-links { display: none !important; }
+    .carousel-title { font-size: 20px !important; }
+  }
+</style>
+</head>
+<body>
+
+<div id="top" style="width: 100%; min-height: 100vh; background: #0B0E14;">
+
+  <!-- NAV -->
+  <div style="position: sticky; top: 0; z-index: 20; width: 100%; background: rgba(11,14,20,0.88); backdrop-filter: blur(8px); border-bottom: 1px solid #1B2133;">
+    <div class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 72px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="#top" class="accent" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px;">CK</a>
+      <div class="nav-links" style="display: flex; align-items: center; gap: 32px;">
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#testimonials">Testimonials</a>
+        <a class="nav-link btn-outline" href="#contact" style="border: 1px solid #333c56; border-radius: 8px; padding: 8px 16px; color: #ECEFF6;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="hero" class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px 56px; position: relative; overflow: hidden; scroll-margin-top: 72px;">
+    <div id="heroGlow" style="position:absolute; left:-400px; top:-400px; width:460px; height:460px; margin-left:-230px; margin-top:-230px; border-radius:50%; pointer-events:none; background:radial-gradient(circle, var(--accent) 0%, transparent 70%); opacity:0; transition: opacity .35s ease; z-index:0;"></div>
+    <div class="hero-row" style="display: flex; align-items: center; gap: 64px; flex-wrap: wrap; position: relative; z-index: 1;">
+      <div style="flex: 1 1 480px; min-width: 300px;">
+        <div class="reveal reveal-1 accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; min-height: 16px;"><span id="typedRole"></span><span class="type-cursor"></span></div>
+        <h1 class="reveal reveal-2" style="font-size: 52px; line-height: 1.12; font-weight: 700; color: #ECEFF6;">Hi, I'm Chirag Kathuria</h1>
+        <div class="reveal reveal-3" style="font-size: 19px; color: #99A2B8; margin-top: 18px; line-height: 1.5;">I build production data pipelines and machine learning systems — and I'm extending that into agentic AI and LLM applications.</div>
+        <div class="reveal reveal-3" style="font-size: 16px; color: #99A2B8; margin-top: 22px; line-height: 1.7; max-width: 540px;">2+ years as a Data Engineer at Bajaj Finserv, India's largest FinTech, building ETL pipelines, ML models and NLP systems on production data. Currently completing an M.S. in Data Science at Universität Trier (Oct 2026), where I work on regulatory-grade data systems and multi-agent LLM pipelines. Based in Frankfurt, Germany — open to Data Engineer, Data Scientist and AI Engineer roles across Germany and Luxembourg. EU student visa, no employer sponsorship required.</div>
+        <div class="reveal reveal-4" style="display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap;">
+          <a href="#projects" class="btn-primary" style="font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 10px;">View Projects</a>
+          <a href="#contact" class="btn-outline" style="border: 1px solid #333c56; color: #ECEFF6; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 10px;">Get in Touch</a>
+        </div>
+        <div class="reveal reveal-5" style="display: flex; gap: 12px; margin-top: 30px;">
+          <a href="https://github.com/Chirag-Kathuria-009" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn" style="width: 42px; height: 42px; border: 1px solid #232A3D; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #99A2B8;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.79-.25.79-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/chirag-kathuria/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn" style="width: 42px; height: 42px; border: 1px solid #232A3D; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #99A2B8;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          </a>
+          <a href="mailto:chiragkathuria24de@gmail.com" aria-label="Email" class="social-btn" style="width: 42px; height: 42px; border: 1px solid #232A3D; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #99A2B8;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="reveal-photo" style="flex: 0 0 auto; display: flex; justify-content: center; width: 100%; max-width: 300px; position: relative;">
+        <div class="hero-blob" style="position: absolute; top: 50%; left: 50%; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); opacity: 0.33; filter: blur(6px); z-index: 0;"></div>
+        <img src="assets/profile.jpg" alt="Chirag Kathuria" style="position: relative; z-index: 1; width: 260px; height: 260px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 8px rgba(124,92,252,0.10), 0 24px 60px rgba(0,0,0,0.55);">
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; border-top: 1px solid #1B2133; padding-top: 44px; position: relative; z-index: 1;">
+      <div style="text-align: center;">
+        <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700;"><span id="countTx">0</span>M+</div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 6px;">Transactions Processed</div>
+      </div>
+      <div style="text-align: center;">
+        <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700;"><span id="countAuc">0</span>%</div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 6px;">Fraud Detection ROC-AUC</div>
+      </div>
+      <div style="text-align: center;">
+        <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700;"><span id="countRec">0</span>M+</div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 6px;">Records Migrated, Zero Downtime</div>
+      </div>
+      <div style="text-align: center;">
+        <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700;"><span id="countRep">0</span>%</div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 6px;">Manual Reporting Time Cut</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills" style="background: #0E1320; border-top: 1px solid #1B2133; border-bottom: 1px solid #1B2133;">
+    <div class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px;">
+      <div class="accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">Skills</div>
+      <h2 style="font-size: 34px; font-weight: 700; color: #ECEFF6; margin-bottom: 44px;">Technical Skills</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px;">
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 6 3 12l5 6M16 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">Programming</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Python</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">SQL</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">T-SQL</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">PL/SQL</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">R</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="6" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M9 12h6M13 9.5 15.5 12 13 14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">Data Engineering &amp; Cloud</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Azure Data Factory</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Databricks</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">PySpark</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Kafka</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Apache Iceberg</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">dbt</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">AWS (S3, EC2)</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="5" cy="17" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="17" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v3.2M11 11 6.6 15M13 11l4.4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">GenAI &amp; Agentic Systems</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">LangChain</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">LangGraph</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">RAG</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Vector DBs (pgvector)</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Prompt Engineering</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">RAGAS</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 19V6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="7" cy="15" r="1.3" fill="currentColor"/><circle cx="11" cy="10" r="1.3" fill="currentColor"/><circle cx="15" cy="13" r="1.3" fill="currentColor"/><circle cx="19" cy="7" r="1.3" fill="currentColor"/><path d="M7 15 11 10 15 13 19 7" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">ML &amp; NLP</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Scikit-learn</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">XGBoost</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">LightGBM</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">TensorFlow</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">BERT / HuggingFace</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">MLflow</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">OpenCV</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">BI &amp; Analytics</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Power BI</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">DAX</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Apache Superset</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Matplotlib</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Seaborn</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.1" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.3M12 18.7V21M21 12h-2.3M5.3 12H3M18.2 5.8l-1.6 1.6M7.4 16.6l-1.6 1.6M18.2 18.2l-1.6-1.6M7.4 7.4 5.8 5.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">Orchestration, Quality &amp; DevOps</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Apache Airflow</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Great Expectations</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Docker</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">CI/CD (Jenkins, Azure DevOps)</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Git</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Grafana</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="7" ry="2.4" stroke="currentColor" stroke-width="1.7"/><path d="M5 6v12c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V6" stroke="currentColor" stroke-width="1.7"/><path d="M5 12c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">Databases</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">PostgreSQL</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">SQL Server (MSSQL)</span>
+          </div>
+        </div>
+
+        <div class="skill-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="font-weight: 600; font-size: 14px; color: #ECEFF6;">Compliance</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">DSGVO / GDPR</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">DORA (BaFin Article 18)</span>
+            <span style="background: rgba(255,255,255,0.04); border: 1px solid #232A3D; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: #99A2B8;">Audit Trails</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experience" class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px;">
+    <div class="accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">Experience</div>
+    <h2 style="font-size: 34px; font-weight: 700; color: #ECEFF6; margin-bottom: 44px;">Work Experience</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <div class="exp-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 28px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.7"/><path d="M3 13h18" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <div style="font-size: 18px; font-weight: 600; color: #ECEFF6;">Werkstudent Data Analytics — Biebelhausener Mühle</div>
+          </div>
+          <div style="font-size: 13px; color: #6C7690;">May 2025 – Present</div>
+        </div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 4px;">Saarburg, Germany</div>
+        <ul style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Analyzed sales data with SQL and Python to identify best-selling products, peak sales hours and purchasing trends, informing inventory and operational decisions.</li>
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Built interactive Power BI dashboards and weekly sales forecasts, cutting manual reporting time by about 70% and helping optimize inventory levels by 10–15%.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 28px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.7"/><path d="M3 13h18" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <div style="font-size: 18px; font-weight: 600; color: #ECEFF6;">Data Engineer (Promoted from Internship) — Bajaj Finserv</div>
+          </div>
+          <div style="font-size: 13px; color: #6C7690;">Jul 2022 – Aug 2024</div>
+        </div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 4px;">Pune, India</div>
+        <ul style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Modernized legacy pipelines to Databricks and PySpark: +35% compute efficiency, −25% processing time, 99.9% data accuracy across 100K+ daily transactions.</li>
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Architected ETL/ELT pipelines in Python, SQL and Azure Data Factory integrating 5+ sources, cutting issue-detection turnaround from 30 minutes to 10 (67% faster).</li>
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Led a KYC/mandate database integration across PostgreSQL, MSSQL and Azure Blob Storage covering 1M+ records with zero-downtime migration and full DSGVO/GDPR compliance; improved query performance by 30%.</li>
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Built an automated QC portal for EMI card onboarding, cutting QC turnaround by 70%; added JaroWinkler fuzzy name-matching and OpenCV eKYC field extraction, improving verification accuracy by 42% across 10K+ daily records.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 28px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="accent" style="width: 34px; height: 34px; border-radius: 9px; background: rgba(124,92,252,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.7"/><path d="M3 13h18" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <div style="font-size: 18px; font-weight: 600; color: #ECEFF6;">Data Engineer Intern — Bajaj Finserv</div>
+          </div>
+          <div style="font-size: 13px; color: #6C7690;">Jan 2022 – Jun 2022</div>
+        </div>
+        <div style="font-size: 13px; color: #6C7690; margin-top: 4px;">Pune, India</div>
+        <ul style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Designed relational database schemas across PostgreSQL, MSSQL and PL/SQL for KYC and mandate data workflows.</li>
+          <li style="font-size: 15px; color: #99A2B8; line-height: 1.6; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0;">—</span>Built CI/CD pipelines with Jenkins and Azure DevOps, cutting deployment failures by 50% and raising automation coverage to 80%.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS: SLIDESHOW -->
+  <div id="projects" style="background: #0E1320; border-top: 1px solid #1B2133; border-bottom: 1px solid #1B2133;">
+    <div class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 44px;">
+        <div>
+          <div class="accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">Projects</div>
+          <h2 class="carousel-title" style="font-size: 34px; font-weight: 700; color: #ECEFF6;">Selected Projects</h2>
+        </div>
+        <div id="indexLabel" style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #6C7690;">01 / 06</div>
+      </div>
+
+      <div id="projectCard" class="scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 20px; padding: 40px; min-height: 300px; transition: transform .12s ease;">
+        <div id="projTitle" style="font-size: 22px; font-weight: 600; color: #ECEFF6;"></div>
+        <div id="projDesc" style="font-size: 15px; color: #99A2B8; line-height: 1.7; margin-top: 14px; max-width: 720px;"></div>
+        <div id="projTags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px;"></div>
+        <a id="projLink" href="#" target="_blank" rel="noopener" class="accent" style="display: inline-block; margin-top: 24px; font-size: 14px; font-weight: 600;">View on GitHub →</a>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 28px;">
+        <button type="button" id="prevBtn" aria-label="Previous project" class="carousel-arrow" style="width: 42px; height: 42px; border-radius: 10px; border: 1px solid #333c56; background: transparent; color: #ECEFF6; cursor: pointer; font-size: 18px;">‹</button>
+        <div id="dots" style="display: flex; gap: 8px; align-items: center;"></div>
+        <button type="button" id="nextBtn" aria-label="Next project" class="carousel-arrow" style="width: 42px; height: 42px; border-radius: 10px; border: 1px solid #333c56; background: transparent; color: #ECEFF6; cursor: pointer; font-size: 18px;">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div id="education" class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px;">
+    <div class="accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">Education</div>
+    <h2 style="font-size: 34px; font-weight: 700; color: #ECEFF6; margin-bottom: 44px;">Education</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="exp-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 26px 30px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 18px; font-weight: 600; color: #ECEFF6;">M.S. in Data Science</div>
+          <div style="font-size: 14px; color: #99A2B8; margin-top: 4px;">Universität Trier, Germany</div>
+        </div>
+        <div style="font-size: 13px; color: #6C7690;">2024 – Oct 2026</div>
+      </div>
+      <div class="exp-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 14px; padding: 26px 30px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 18px; font-weight: 600; color: #ECEFF6;">B.Tech in Computer Science</div>
+          <div style="font-size: 14px; color: #99A2B8; margin-top: 4px;">VIT University, Vellore, India — CGPA 8.43/10</div>
+        </div>
+        <div style="font-size: 13px; color: #6C7690;">2018 – 2022</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" style="background: #0E1320; border-top: 1px solid #1B2133; border-bottom: 1px solid #1B2133;">
+    <div class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 96px 40px;">
+      <div class="accent" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">Testimonials</div>
+      <h2 style="font-size: 34px; font-weight: 700; color: #ECEFF6; margin-bottom: 44px;">What people I've worked with say</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+        <div class="testimonial-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
+          <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1; opacity: 0.5;">&ldquo;</div>
+          <div style="font-size: 14.5px; color: #99A2B8; line-height: 1.7; margin-top: 4px; flex-grow: 1;">Chirag has a strong aptitude for data engineering, especially SQL and Azure Data Factory. His CI/CD and DevOps work streamlined our data workflows, and he's a generous mentor to junior engineers.</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 22px; padding-top: 18px; border-top: 1px solid #232A3D;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div class="accent" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(124,92,252,0.15); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; flex-shrink: 0;">RP</div>
+              <div>
+                <div style="font-size: 14px; font-weight: 600; color: #ECEFF6;">Rahul Patra</div>
+                <div style="font-size: 12.5px; color: #6C7690; margin-top: 2px;">Senior Consultant, Thoughtworks — former Data Architect, Bajaj Finserv</div>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/rahul-patra-iitkgp/" target="_blank" rel="noopener" aria-label="Rahul Patra on LinkedIn" style="flex-shrink: 0; margin-left: 12px; width: 32px; height: 32px; border-radius: 8px; border: 1px solid #232A3D; display: flex; align-items: center; justify-content: center; color: #6C7690;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
+          <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1; opacity: 0.5;">&ldquo;</div>
+          <div style="font-size: 14.5px; color: #99A2B8; line-height: 1.7; margin-top: 4px; flex-grow: 1;">Chirag consistently delivers efficient, accurate data solutions and tackles complex challenges with a proactive, analytical approach. He's an invaluable team member who goes the extra mile.</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 22px; padding-top: 18px; border-top: 1px solid #232A3D;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div class="accent" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(124,92,252,0.15); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; flex-shrink: 0;">RC</div>
+              <div>
+                <div style="font-size: 14px; font-weight: 600; color: #ECEFF6;">Rameshwar Chouhan</div>
+                <div style="font-size: 12.5px; color: #6C7690; margin-top: 2px;">Senior Delivery Manager, Bajaj Finance Ltd. — Chirag's Team Lead</div>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/rameshwar-chouhan-505b3458/" target="_blank" rel="noopener" aria-label="Rameshwar Chouhan on LinkedIn" style="flex-shrink: 0; margin-left: 12px; width: 32px; height: 32px; border-radius: 8px; border: 1px solid #232A3D; display: flex; align-items: center; justify-content: center; color: #6C7690;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="background: #121729; border: 1px solid #232A3D; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
+          <div class="accent" style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1; opacity: 0.5;">&ldquo;</div>
+          <div style="font-size: 14.5px; color: #99A2B8; line-height: 1.7; margin-top: 4px; flex-grow: 1;">Chirag built robust ETL pipelines on Azure Data Factory and SQL, and his fraud-detection and fuzzy-matching work measurably reduced fraudulent onboarding attempts. He's proactive, collaborative, and mentors junior colleagues.</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 22px; padding-top: 18px; border-top: 1px solid #232A3D;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div class="accent" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(124,92,252,0.15); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; flex-shrink: 0;">VV</div>
+              <div>
+                <div style="font-size: 14px; font-weight: 600; color: #ECEFF6;">Vijay Viknesh</div>
+                <div style="font-size: 12.5px; color: #6C7690; margin-top: 2px;">Data Scientist, Ahead — former Lead Data Engineer, Bajaj Finserv</div>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/vijay-viknesh-240491153/" target="_blank" rel="noopener" aria-label="Vijay Viknesh on LinkedIn" style="flex-shrink: 0; margin-left: 12px; width: 32px; height: 32px; border-radius: 8px; border: 1px solid #232A3D; display: flex; align-items: center; justify-content: center; color: #6C7690;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" style="background: #0E1320; border-top: 1px solid #1B2133;">
+    <div class="section-pad" style="max-width: 1100px; margin: 0 auto; padding: 100px 40px; display: flex; align-items: center; justify-content: center; gap: 56px; flex-wrap: wrap;">
+      <div style="flex: 1 1 420px; min-width: 280px; text-align: left;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #ECEFF6;">Let's build something</h2>
+        <div style="font-size: 16px; color: #99A2B8; margin-top: 16px; max-width: 480px; line-height: 1.6;">Open to Data Engineer, Data Scientist and AI Engineer roles in Germany and Luxembourg — available immediately, no employer sponsorship required.</div>
+        <div style="display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap;">
+          <a href="mailto:chiragkathuria24de@gmail.com" class="btn-primary" style="font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 10px;">chiragkathuria24de@gmail.com</a>
+          <a href="https://www.linkedin.com/in/chirag-kathuria/" target="_blank" rel="noopener" class="contact-btn" style="border: 1px solid #333c56; color: #99A2B8; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 10px;">LinkedIn</a>
+          <a href="https://github.com/Chirag-Kathuria-009" target="_blank" rel="noopener" class="contact-btn" style="border: 1px solid #333c56; color: #99A2B8; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 10px;">GitHub</a>
+        </div>
+      </div>
+      <div class="scroll-reveal" style="flex: 0 1 340px; min-width: 260px; display: flex; justify-content: center;">
+        <svg viewBox="0 0 360 280" width="100%" style="max-width: 340px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="215" x2="340" y2="215" stroke="#333c56" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="215" x2="40" y2="250" stroke="#333c56" stroke-width="3" stroke-linecap="round"/>
+          <line x1="320" y1="215" x2="320" y2="250" stroke="#333c56" stroke-width="3" stroke-linecap="round"/>
+          <rect x="90" y="190" width="110" height="8" rx="3" fill="#232A3D"/>
+          <path d="M100 190 L108 125 Q108 118 116 118 L184 118 Q192 118 192 125 L200 190 Z" stroke="#99A2B8" stroke-width="2.5"/>
+          <line x1="122" y1="140" x2="178" y2="140" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="122" y1="153" x2="168" y2="153" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+          <line x1="122" y1="166" x2="174" y2="166" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+          <path d="M255 220 L255 170 Q255 160 265 160 L275 160" stroke="#333c56" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <line x1="255" y1="220" x2="255" y2="250" stroke="#333c56" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="248" cy="120" r="16" fill="#131826" stroke="#99A2B8" stroke-width="2.5"/>
+          <path d="M226 178 Q226 150 248 148 Q270 150 270 178 L270 208 L226 208 Z" fill="#131826" stroke="#99A2B8" stroke-width="2.5"/>
+          <path d="M230 165 Q210 172 205 190" stroke="#99A2B8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="234" y1="208" x2="234" y2="232" stroke="#99A2B8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="262" y1="208" x2="262" y2="232" stroke="#99A2B8" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M55 230 Q40 228 40 215 Q40 205 55 208 Q62 200 70 208 Q85 205 85 218 Q85 230 68 230 Z" fill="#131826" stroke="var(--accent)" stroke-width="2"/>
+          <circle cx="52" cy="217" r="1.6" fill="var(--accent)"/>
+          <circle cx="62" cy="216" r="1.6" fill="var(--accent)"/>
+          <g class="float-slow">
+            <rect x="270" y="55" width="54" height="38" rx="5" fill="#131826" stroke="var(--accent)" stroke-width="2.2"/>
+            <path d="M270 58 L297 78 L324 58" stroke="var(--accent)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding: 28px 40px; text-align: center; font-size: 13px; color: #6C7690;">© 2026 Chirag Kathuria</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
